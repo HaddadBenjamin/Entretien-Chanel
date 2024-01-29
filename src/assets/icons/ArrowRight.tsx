@@ -2,10 +2,12 @@ import React, { FC } from "react";
 
 interface Props {
   className?: string;
+  onClick?: () => void;
 }
 
-const ArrowRight: FC<Props> = ({ className }) => (
+const ArrowRight: FC<Props> = ({ className, onClick }) => (
   <svg
+    onClick={onClick}
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
     className={className}

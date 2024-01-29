@@ -1,4 +1,33 @@
 .container {
-  max-width: 840px;
-  margin: auto;
+  display: flex;
+  overflow: hidden;
+  transition: left 0.5s ease-in-out;
+  position: absolute;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f5f7;
+  height: 65px;
+  padding: 0 16px;
+  transition: background-color 0.3s ease;
+  min-width: calc(100vw - 26px);
+}
+
+.arrow {
+  height: 30px;
+  fill: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.arrow:hover {
+  fill: rgba(0, 0, 0, 0.6);
 }

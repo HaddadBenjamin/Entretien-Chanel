@@ -4,7 +4,7 @@ import { menusMocks } from "./components/Navigation/Navigation.mock";
 
 const App: FC = () => (
   <div>
-    <Navigation id="channel-menu" menus={menusMocks} />
+    <Navigation menus={menusMocks} />
   </div>
 );
 
