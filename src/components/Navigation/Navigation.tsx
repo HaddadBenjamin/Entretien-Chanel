@@ -10,17 +10,24 @@ interface Props {
 
 const Navigation: FC<Props> = ({ menus }) => {
   const [horizontalMenus, setHorizontalMenus] = useState([menus]);
+  const [horizontalMenusCount, setHorizontalMenusCount] = useState(1);
 
-  const addHorizontalMenu = (newMenu: INavigationMenu[]): void =>
+  const addHorizontalMenu = (newMenu: INavigationMenu[]): void => {
     setHorizontalMenus((previousMenus) => [...previousMenus, newMenu]);
-
-  const removeLastHorizontalMenu = (): void =>
-    setHorizontalMenus((previousMenus) => previousMenus.slice(0, -1));
+    setHorizontalMenusCount((previousCount) => previousCount + 1);
+  };
+  const removeLastHorizontalMenu = (): void => {
+    setHorizontalMenusCount((previousCount) => previousCount - 1);
+    setTimeout(
+      () => setHorizontalMenus((previousMenus) => previousMenus.slice(0, -1)),
+      500
+    );
+  };
 
   return (
     <div
       className={styles.container}
-      style={{ left: `${-(horizontalMenus.length - 1) * 100}%` }}
+      style={{ left: `${-(horizontalMenusCount - 1) * 100}%` }}
     >
       {horizontalMenus.map((horizontalMenu, horizontalMenuIndex) => (
         <div className={styles.menuContainer}>
