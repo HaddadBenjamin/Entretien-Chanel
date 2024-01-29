@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import Navigation from "./components/Navigation/Navigation.tsx";
-import { menusMocks } from "./components/Navigation/Navigation.mock.tsx";
+import Navigation from "./components/Navigation/Navigation";
+import { menusMocks } from "./components/Navigation/Navigation.mock";
 
 const App: FC = () => (
   <div>
-    <Navigation menus={menusMocks} />
+    <Navigation id="channel-menu" menus={menusMocks} />
   </div>
 );
 
