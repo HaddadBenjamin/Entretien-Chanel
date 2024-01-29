@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f5f7;
+  height: 65px;
+  padding: 0 16px;
+  transition: background-color 0.3s ease;
+}
+
+.container:hover {
+  background-color: #cce9f8;
+  cursor: pointer;
+}
+.container:hover > .arrow {
+  fill: rgba(0, 0, 0, 0.6);
+}
+
+.title {
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.arrow {
+  height: 30px;
+  fill: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
